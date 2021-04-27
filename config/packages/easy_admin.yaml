@@ -1,0 +1,12 @@
+easy_admin:
+    site_name: ' <em style="font-size: 80%; color:blue;">Admin-Rafael.</em>'
+    entities:
+
+        # List the entity class name you want to manage
+        - App\Entity\Pochette
+        - App\Entity\Caracteristique
+        - App\Entity\AvisGeneral
+        - App\Entity\User
+    design:
+        brand_color: '#F64A0E'
+

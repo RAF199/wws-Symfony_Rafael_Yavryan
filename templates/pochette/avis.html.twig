@@ -1,0 +1,202 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Women's Wallets Store{% endblock %}
+
+{% block body %}
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark  ">
+        <img src="image/wwsLogo.bmp" class="" style="width: 7%" alt="Responsive image">
+        <button type="button" class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon bg-white"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="{{ path('home') }}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ path('couleur') }}">By Color</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Les Avis</a>
+                </li>
+                <li class="nav-item" >
+
+                    <a  class="nav-link text-white float-right"  href="/admin" style="margin-left: 30rem;">Connexion-Admin</a>
+
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container mt6-l">
+    <table class="table">
+
+        <tbody class="">
+
+
+        <tr>
+            {% for a in avis %}
+                <h4 class="text-center">Je suis  {{ a.nom }} {{ a.prenom }}</h4>
+                {% if a.age %}
+                    <h5 class="text-center">J'ai {{ a.age }} ans</h5>
+                {% endif %}
+                <br>
+                <hr style="width:50%">
+                <h6 class="text-center font-italic" >" {{ a.avis }} "</h6>
+                <hr class="font-weight-bold">
+                <hr class="font-weight-bold">
+            {% endfor %}
+        </tr>
+
+        </tbody>
+    </table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-warning">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                    <!-- Content -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
+                    <p> Projet Web / Licence 2 : Semestre 2 / 2019-2020</p> <br>
+                    <p> Symfony 5  </p>
+                    <p> Createur : Rafael Yavryan  </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mb-4 ">About</h5>
+
+                    <ul class="list-unstyled ">
+                        <li>
+                            <p>
+                                <a href="#!">PROJECTS</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="#!">ABOUT US</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="#!">BLOG</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="#!">AWARDS</a>
+                            </p>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+                    <!-- Contact details -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>
+                                <i class="fas fa-home mr-3"></i> Université La Rochelle</p>
+                        </li>
+
+
+
+
+                    </ul>
+
+                    <img src="image/index.png" alt="Université la Rochelle" style="width: 100px; margin-left: 2rem;">
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+
+                    <!-- Social buttons -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+
+                    <!-- Facebook -->
+
+                    <!-- Twitter -->
+                    <a type="button" class="btn-floating btn-tw">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEu0lEQVR4nO3dW6hUVRzH8Y+Z2UVNpSDt/iLZhRQJTSJ6qrTLQ1SKURRWEGVJQkFWGBXUQygVFCXaDeyth4LKB0npRmQSZWkUlJSaLxVpWJmnh3WGmTNnz5yZc2b2nu35f2E/zFr7rPVb+3fW+q897P0fgiAIgiAIgiAIgiAIgiAIgiAIgk4wHgvwIj7Dz/gXfT16/Ic9+AKv4XpM6PhVKYBxuBN7FX+RR3ocwFM4saNXKEfOw07VAW3FSszDdBxdnLQhOQqnYDaW4wMclsaxF5cVJWy4LMQf0gC+kparsjMXW6Qx/YM7ipXTOnPwlyR8A44rVk5HGYNV0mw5jMWFqmmB6VIw7MOzTc67FKuloLlHdTko+ljW4jjvVY0rF7b4N4WwXhL6PsZm1M/Hx9IythIXSWv1mLwEdpCXpLFuKVpIIy7AIRzEmRn190vb3ZukoFl2JqjuHq8tWEsmz0viVmfUPS4tT6flqqj73CON+b2ihdQzBrskcbPr6hbje5yUt6gcmCLtuP7GpIK1DGCmZMZPdeWTpKA9K3dF+bFJGvs1RQup5XLZU/dRrMtfTq5Uluq7ixZSy22SqPqLv9ORPTvgIWnsTxYtpJZlBt97zMCPhajJl6yxF06WqKvxdjFycqU0htyOl4uRkyulMWSZ7osch1vwlrTtPiD7K5FVXdQQhvRzLnZIO7tFOEP2F5nd1hGG4HT8gptbODcMqSnrlsgN0j1OK4QhNWXdEDkFv2Nii+d3WscSA2PSqDdkITa2cX6nddS3N+oNWYq1GeVjpW8KDuruLitmSB13NWj3RnyEyV3osxmj3pBG7eZx30PMkMy+ijQkYkhGX2HIEHTbkCWGDtL151SOQzr7ZEgYMsK2vsE5HdJBxJARt/Wn1m8ih0MY0gZTJUM6ScyQEbQ1S3oor5NEDNFaUM86rw+vd0hDhTAko69G7eax9Q1DMvoKQ4YgDAlD2q7rVv9hSJN2w5B+wpAwpO26bvUfhjRpNwzpJwwJQ9qu61b/YUiTdsOQfsKQMKTtum71H4Y0aTcM6ScMGcWGNHqYIY93QSixIUfqG1QP4Omaz6Ux5Cq8U4ycrrIG99V8Lo0hM6REAmVMLNOMTdIT+BV60pBbJVHr68p3GJxqo8xMxW84tqZspTT2JwpR1IBGmRweMdikMvMwXq0r68lMDpVcJ7sMXKImYrcjY5ZMxz6cXVfek7lOmmUDugE/KHc2oPH4BA/WlU+V0t0e1GPZgOA5yZA1GXWPYZv06nLZmCwtxW8YvEGpBPR38xbVCuerZpQ7K6N+ueqrzGXJKLcQ3+EZg1MWTsSvenC5qmWdJHCj7Ly88/AhtksBf67eyrl4svT46QppifrawC1uLWulsW7OR9rwmCYF8T5pCWt0oS+R/uu26q2spPvwpZQS/UrZiTxJs70P+6Vckz3NHNWcI2/i+GLldJT6vL2LClXTBgtUM1tvl1I1lZ2Lpbd8+6Qci0uLldM+M/Gt6nKwTUqHMR+n6v3c79Ok2b5Cys1bWVZ3S4mgS0nl1xEq2a7LfOyXfh2h5+43hsMxuAIv4FPl+P2Q3fgcr+A6nNDpixIEQRAEQRAEQRAEQRAEQRAEQRAEQRD0NP8D/aDe+ELcUwgAAAAASUVORK5CYII=" alt="">
+                    </a>
+                    <!-- Google +-->
+                    <a type="button" class="btn-floating btn-gplus">
+                        <img src="https://img.icons8.com/carbon-copy/100/000000/instagram-new.png"/>
+                    </a>
+                    <!-- Dribbble -->
+
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+
+
+    </footer>
+
+{% endblock %}
